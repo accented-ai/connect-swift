@@ -70,9 +70,9 @@ final class ConnectClientGenerator: Generator {
             "\(self.visibility) final class \(className): \(protocolName), Sendable {"
         )
         self.indent {
-            self.printLine("private let client: Connect.ProtocolClientInterface")
+            self.printLine("private let client: any Connect.ProtocolClientInterface")
             self.printLine()
-            self.printLine("\(self.visibility) init(client: Connect.ProtocolClientInterface) {")
+            self.printLine("\(self.visibility) init(client: any Connect.ProtocolClientInterface) {")
             self.indent {
                 self.printLine("self.client = client")
             }
